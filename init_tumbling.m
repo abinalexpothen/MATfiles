@@ -20,6 +20,11 @@ q0 = [0.8034 0.1600 0.4272 0.3828]';
 qd0 = [0.0379 0.6999 -0.2503 -0.0927]';    
 %tumbling_sim_v2
 
+% constraint parameters
+alpha = 0.5;
+gamma = 8;
+
+
 % syms q0 q1 q2 q3
 % 
 % Mat = [-2*q1 2*q0 2*q3 -2*q2;
