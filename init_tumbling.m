@@ -13,7 +13,7 @@ omega0 = [1 -1 0.5]';
 J = diag([1.3626 1.5333 0.3848]);
 
 % initial quaternion
-%q0 = axang2quat(axang)';
+% q0 = axang2quat(axang)';
 q0 = [0.8034 0.1600 0.4272 0.3828]';
 
 % initial quaternion derivative 
