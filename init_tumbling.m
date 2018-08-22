@@ -7,9 +7,9 @@ clear all
 close all
 
 %% variable initialization
-
-axang = [[1 1 1]/sqrt(3) pi/3];
-omega0 = [1 -1 0.5]';
+% 
+% axang = [[1 1 1]/sqrt(3) pi/3];
+% omega0 = [1 -1 0.5]';
 J = diag([1.3626 1.5333 0.3848]);
 
 % initial quaternion
@@ -17,12 +17,15 @@ J = diag([1.3626 1.5333 0.3848]);
 q0 = [0.8034 0.1600 0.4272 0.3828]';
 
 % initial quaternion derivative 
-qd0 = [0.0379 0.6999 -0.2503 -0.0927]';    
-%tumbling_sim_v2
+qd0 = [0.0379 0.6999 -0.2503 -0.0927]'; 
 
-% constraint parameters
-alpha = 0.5;
-gamma = 8;
+E10 = [-q0(2) q0(1) q0(4) -q0(3);
+       -q0(3) -q0(4) q0(1) q0(2);
+       -q0(4) q0(3) -q0(2) q0(1)];
+   
+omega0 = 2*E10*qd0;
+
+%tumbling_sim_v2
 
 
 % syms q0 q1 q2 q3
